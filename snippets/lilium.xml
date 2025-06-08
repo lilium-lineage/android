@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote name="lilium-lineage"
+            fetch="https://github.com/lilium-lineage"
+            revision="lineage-22.2" />
+
+    <!-- Manifest -->
+    <remove-project name="LineageOS/android" />
+    <project path="android" name="android" remote="lilium-lineage" />
+
+    <!-- Build -->
+    <remove-project name="LineageOS/android_build_soong" />
+    <project path="build/soong" name="android_build_soong" remote="lilium-lineage" >
+        <linkfile src="root.bp" dest="Android.bp" />
+        <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+    </project>
+
+    <!-- Frameworks -->
+    <remove-project name="LineageOS/android_frameworks_base" />
+    <project path="frameworks/base" name="android_frameworks_base" remote="lilium-lineage" />
+
+    <!-- Packages -->
+    <remove-project name="LineageOS/android_packages_apps_Settings" />
+    <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="lilium-lineage" />
+
+    <remove-project name="LineageOS/android_packages_apps_Trebuchet" />
+    <project path="packages/apps/Trebuchet" name="android_packages_apps_Trebuchet" remote="lilium-lineage" />
+
+    <remove-project name="LineageOS/android_packages_apps_Updater" />
+    <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="lilium-lineage" />
+
+    <remove-project name="LineageOS/android_packages_overlays_Lineage" />
+    <project path="packages/overlays/Lineage" name="android_packages_overlays_Lineage" remote="lilium-lineage" />
+
+    <project path="packages/libraries/preferences" name="android_packages_libraries_preferences" remote="lilium-lineage" />
+
+    <!-- System -->
+    <remove-project name="LineageOS/android_system_core" />
+    <project path="system/core" name="android_system_core" remote="lilium-lineage" />
+
+    <!-- Vendor -->
+    <remove-project name="LineageOS/android_vendor_lineage" />
+    <project path="vendor/lineage" name="android_vendor_lineage" remote="lilium-lineage" />
+
+    <project path="vendor/halcyonui" name="android_vendor_halcyonui" remote="lilium-lineage" />
+
+</manifest>
